@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Резюме — Давронзода Диловар</title>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
 
@@ -18,6 +19,7 @@
             <li><a href="#about">О себе</a></li>
             <li><a href="#skills">Навыки</a></li>
             <li><a href="#contact">Контакты</a></li>
+            <li><a href="register.html">Регистрация</a></li>
         </ul>
     </nav>
 
@@ -55,25 +57,29 @@
             <h2>Связаться со мной</h2>
             <form action="#" method="post">
 
-                <div>
-                    <label for="name">Имя:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
+                <fieldset>
+                    <legend>Контактная форма</legend>
 
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
+                    <div>
+                        <label for="name">Имя:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
 
-                <div>
-                    <label for="phone">Телефон:</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
 
-                <div>
-                    <label for="message">Сообщение:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                </div>
+                    <div>
+                        <label for="phone">Телефон:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div>
+                        <label for="message">Сообщение:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                </fieldset>
 
                 <button type="submit">Отправить</button>
 

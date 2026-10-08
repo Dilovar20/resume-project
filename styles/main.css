@@ -1,0 +1,265 @@
+/* ============================================
+   ЛР №4 — CSS3 стилизация резюме
+   Стиль: Classic (бежево-серый)
+   ============================================ */
+
+/* ===== 1. СБРОС И БАЗА ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== 2. ПЕРЕМЕННЫЕ ===== */
+:root {
+    /* Цвета */
+    --bg-color: #f5f2ea;
+    --surface-color: #ffffff;
+    --text-color: #2b2b2b;
+    --text-muted: #6b6b6b;
+    --primary-color: #5c4033;
+    --accent-color: #8b7355;
+    --border-color: #d8d2c4;
+
+    /* Типографика */
+    --font-main: 'Georgia', 'Times New Roman', serif;
+    --font-heading: 'Georgia', serif;
+    --line-height: 1.6;
+
+    /* Отступы (в rem) */
+    --base-padding: 1rem;
+    --section-padding: 2rem;
+    --container-max: 60rem;
+    --base-radius: 0.25rem;
+
+    /* Тени */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== 3. ТИПОГРАФИКА И БАЗА ===== */
+body {
+    font-family: var(--font-main);
+    line-height: var(--line-height);
+    letter-spacing: 0.01em;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    padding: var(--base-padding);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    line-height: 1.3;
+    color: var(--primary-color);
+}
+
+h1 { font-size: 2.25rem; margin-bottom: 0.5rem; }
+h2 { font-size: 1.5rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border-color); }
+h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+
+p { margin-bottom: 0.75rem; }
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-color);
+}
+a:hover { color: var(--accent-color); }
+
+/* ===== 4. МАКРО-КОНТЕЙНЕРЫ ===== */
+header,
+nav,
+main,
+footer {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    background-color: var(--surface-color);
+    padding: var(--base-padding) var(--section-padding);
+    box-shadow: var(--shadow-sm);
+}
+
+header {
+    text-align: center;
+    padding-top: var(--section-padding);
+    border-radius: var(--base-radius) var(--base-radius) 0 0;
+}
+
+header img {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+    margin-bottom: var(--base-padding);
+}
+
+header p {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* ===== 5. НАВИГАЦИЯ ===== */
+nav {
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.75rem var(--section-padding);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+}
+
+/* ===== 6. СЕКЦИИ ===== */
+main {
+    padding: var(--section-padding);
+}
+
+section {
+    margin-bottom: var(--section-padding);
+}
+
+section:last-child { margin-bottom: 0; }
+
+article ul {
+    padding-left: 1.5rem;
+}
+
+article ul li {
+    margin-bottom: 0.35rem;
+}
+
+/* ===== 7. ФОРМЫ ===== */
+form {
+    max-width: 32rem;
+    margin: 0 auto;
+}
+
+fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: var(--base-radius);
+    padding: var(--base-padding);
+    margin-bottom: var(--base-padding);
+    background-color: #fbfaf6;
+}
+
+legend {
+    font-weight: bold;
+    color: var(--primary-color);
+    padding: 0 0.5rem;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--base-radius);
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(139, 115, 85, 0.15);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 0.35rem;
+    accent-color: var(--accent-color);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 5rem;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 0.85rem 1.5rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: var(--base-radius);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--accent-color);
+}
+
+/* ===== 8. ФУТЕР ===== */
+footer {
+    text-align: center;
+    padding: var(--base-padding);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-color);
+    border-radius: 0 0 var(--base-radius) var(--base-radius);
+}
+
+/* ===== 9. АДАПТИВ ===== */
+@media (max-width: 48rem) {
+    body { padding: 0; }
+
+    header,
+    nav,
+    main,
+    footer {
+        border-radius: 0;
+        box-shadow: none;
+        padding-left: var(--base-padding);
+        padding-right: var(--base-padding);
+    }
+
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.25rem; }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    header img {
+        width: 7rem;
+        height: 7rem;
+    }
+}

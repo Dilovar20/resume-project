@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация на курс — Давронзода Диловар</title>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
 
     <header>
         <h1>Регистрация на курс / стажировку</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">← На главную</a></li>
-            </ul>
-        </nav>
+        <p>Заполните форму для подачи заявки</p>
     </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">← На главную</a></li>
+        </ul>
+    </nav>
 
     <main>
 
@@ -66,7 +69,7 @@
                 <legend>Пол</legend>
 
                 <input type="radio" id="male" name="gender" value="male" required>
-                <label for="male">Мужской</label>
+                <label for="male">Мужской</label><br>
 
                 <input type="radio" id="female" name="gender" value="female">
                 <label for="female">Женский</label>
@@ -132,7 +135,7 @@
             <fieldset>
                 <legend>Дополнительно</legend>
 
-                <label for="comment">Комментарий (необязательно):</label><br>
+                <label for="comment">Комментарий (необязательно):</label>
                 <textarea id="comment" name="comment" rows="4" maxlength="500"></textarea>
             </fieldset>
 
