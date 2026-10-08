@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дашборд студента — Давронзода Диловар</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/layout.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="dashboard">
+
+        <!-- ВЕРХНЯЯ ПАНЕЛЬ -->
+        <header class="dash-header">
+            <div class="dash-logo">
+                <span class="logo-icon">📊</span>
+                <span class="logo-text">Student Dashboard</span>
+            </div>
+            <div class="dash-user">
+                <span class="user-name">Давронзода Диловар</span>
+                <a href="index.html" class="btn-outline">← На главную</a>
+            </div>
+        </header>
+
+        <!-- ЛЕВОЕ МЕНЮ -->
+        <aside class="dash-sidebar">
+            <nav>
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="active">🏠 Главная</a></li>
+                    <li><a href="index.html">👤 Обо мне</a></li>
+                    <li><a href="#">💻 Проекты</a></li>
+                    <li><a href="#">📚 Навыки</a></li>
+                    <li><a href="register.html">📝 Регистрация</a></li>
+                    <li><a href="#">📞 Контакты</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- ЦЕНТРАЛЬНАЯ ОБЛАСТЬ -->
+        <main class="dash-main">
+
+            <h1 class="dash-title">Панель управления</h1>
+            <p class="dash-subtitle">Статистика и проекты студента IT-специальности</p>
+
+            <!-- СТАТИСТИКА -->
+            <section class="stats-grid">
+
+                <article class="stat-card">
+                    <div class="stat-icon">📈</div>
+                    <div class="stat-value">4.75</div>
+                    <div class="stat-label">Средний балл (GPA)</div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon">📚</div>
+                    <div class="stat-value">6</div>
+                    <div class="stat-label">Изученных предметов</div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon">💻</div>
+                    <div class="stat-value">6</div>
+                    <div class="stat-label">Проектов в портфолио</div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-value">92%</div>
+                    <div class="stat-label">Посещаемость</div>
+                </article>
+
+            </section>
+
+            <!-- ПРОЕКТЫ -->
+            <section class="projects-section">
+
+                <h2 class="section-heading">Мои проекты</h2>
+
+                <div class="projects-grid">
+
+                    <article class="project-card">
+                        <div class="project-icon">🌐</div>
+                        <h3 class="project-title">Резюме-портфолио</h3>
+                        <p class="project-desc">Семантическая HTML-страница с формой контактов.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                        </div>
+                        <a href="index.html" class="btn-card">Открыть →</a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-icon">📝</div>
+                        <h3 class="project-title">Форма регистрации</h3>
+                        <p class="project-desc">Многостраничная форма с HTML5-валидацией.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">Pattern</span>
+                        </div>
+                        <a href="register.html" class="btn-card">Открыть →</a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-icon">🐍</div>
+                        <h3 class="project-title">Python-задачи</h3>
+                        <p class="project-desc">Решение алгоритмических задач на Python.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                        </div>
+                        <a href="#" class="btn-card">Открыть →</a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-icon">🗄️</div>
+                        <h3 class="project-title">SQL-запросы</h3>
+                        <p class="project-desc">Работа с базами данных, выборки, JOIN'ы.</p>
+                        <div class="project-tags">
+                            <span class="tag">SQL</span>
+                        </div>
+                        <a href="#" class="btn-card">Открыть →</a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-icon">⚡</div>
+                        <h3 class="project-title">Todo App</h3>
+                        <p class="project-desc">Приложение для задач на чистом JavaScript.</p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <a href="#" class="btn-card">Открыть →</a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-icon">🎨</div>
+                        <h3 class="project-title">CSS Grid Layout</h3>
+                        <p class="project-desc">Адаптивные сетки на CSS Grid и Flexbox.</p>
+                        <div class="project-tags">
+                            <span class="tag">CSS Grid</span>
+                            <span class="tag">Flexbox</span>
+                        </div>
+                        <a href="#" class="btn-card">Открыть →</a>
+                    </article>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- ФУТЕР -->
+        <footer class="dash-footer">
+            <p>&copy; 2026 Давронзода Диловар — КазНУ, ФИТ</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

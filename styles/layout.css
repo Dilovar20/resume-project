@@ -1,0 +1,303 @@
+/* ============================================
+   ЛР №5 — Grid + Flexbox для дашборда
+   ============================================ */
+
+/* ===== 1. БАЗА ДЛЯ ДАШБОРДА ===== */
+.dashboard-body {
+    background-color: #ede8dc;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem;
+}
+
+/* ===== 2. МАКРОСТРУКТУРА — CSS GRID ===== */
+.dashboard {
+    display: grid;
+    grid-template-areas:
+        "header  header"
+        "sidebar main"
+        "footer  footer";
+    grid-template-columns: 15rem 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 1rem;
+    max-width: 80rem;
+    margin: 0 auto;
+    min-height: calc(100vh - 2rem);
+}
+
+.dashboard > .dash-header  { grid-area: header; }
+.dashboard > .dash-sidebar { grid-area: sidebar; }
+.dashboard > .dash-main    { grid-area: main; }
+.dashboard > .dash-footer  { grid-area: footer; }
+
+/* ===== 3. ВЕРХНЯЯ ПАНЕЛЬ — FLEXBOX ===== */
+.dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--surface-color);
+    padding: 1rem 1.5rem;
+    border-radius: var(--base-radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.dash-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: bold;
+    font-size: 1.15rem;
+    color: var(--primary-color);
+}
+
+.logo-icon { font-size: 1.5rem; }
+
+.dash-user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.95rem;
+}
+
+.user-name { color: var(--text-muted); }
+
+/* ===== 4. ЛЕВОЕ МЕНЮ ===== */
+.dash-sidebar {
+    background-color: var(--surface-color);
+    border-radius: var(--base-radius);
+    box-shadow: var(--shadow-sm);
+    padding: 1rem;
+}
+
+.sidebar-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.sidebar-menu a {
+    display: block;
+    padding: 0.65rem 0.9rem;
+    border-radius: var(--base-radius);
+    color: var(--text-color);
+    border: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.sidebar-menu a:hover {
+    background-color: #f0ebe0;
+    color: var(--primary-color);
+}
+
+.sidebar-menu a.active {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* ===== 5. ЦЕНТРАЛЬНАЯ ОБЛАСТЬ ===== */
+.dash-main {
+    background-color: transparent;
+    padding: 0;
+    box-shadow: none;
+    max-width: none;
+}
+
+.dash-title {
+    font-size: 1.75rem;
+    margin-bottom: 0.25rem;
+    color: var(--primary-color);
+}
+
+.dash-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+/* ===== 6. СЕТКА СТАТИСТИКИ — GRID ===== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--surface-color);
+    padding: 1.5rem 1rem;
+    border-radius: var(--base-radius);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.stat-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+
+.stat-value {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    line-height: 1.2;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+}
+
+/* ===== 7. СЕТКА ПРОЕКТОВ — GRID ===== */
+.section-heading {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1rem;
+}
+
+/* ===== 8. КАРТОЧКА ПРОЕКТА — FLEXBOX ===== */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--surface-color);
+    padding: 1.25rem;
+    border-radius: var(--base-radius);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.project-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-title {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.project-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    flex-grow: 1;
+    margin-bottom: 0.75rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 0.75rem;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    background-color: #f0ebe0;
+    color: var(--primary-color);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-family: sans-serif;
+}
+
+.btn-card {
+    display: block;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: var(--base-radius);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.btn-card:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+.btn-outline {
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--base-radius);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.85rem;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s;
+}
+
+.btn-outline:hover {
+    background-color: #f0ebe0;
+}
+
+/* ===== 9. ФУТЕР ===== */
+.dash-footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--surface-color);
+    border-radius: var(--base-radius);
+    box-shadow: var(--shadow-sm);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ===== 10. АДАПТИВ ===== */
+@media (max-width: 48rem) {
+    .dashboard-body { padding: 0.5rem; }
+
+    .dashboard {
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .dash-sidebar {
+        display: none; /* на мобильном скрываем боковое меню */
+    }
+
+    .dash-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .dash-user { flex-direction: column; gap: 0.5rem; }
+
+    .dash-title { font-size: 1.35rem; }
+
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
