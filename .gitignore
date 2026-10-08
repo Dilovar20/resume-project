@@ -1,0 +1,23 @@
+# === IDE / Редакторы ===
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# === Логи ===
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# === Зависимости ===
+node_modules/
+
+# === Операционная система ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === Сборка ===
+dist/
+build/
